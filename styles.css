@@ -1,0 +1,462 @@
+/* Resetear márgenes y paddings para asegurar un diseño consistente */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fuente global */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding-top: 80px;
+}
+
+/* Encabezado */
+.header {
+    background-color: hsl(339, 81%, 85%); /* Rosa claro */
+    padding: 10px 15px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.header .logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.header .logo img {
+    max-width: 60px;
+    height: auto;
+}
+.header h1 {
+    font-size: 2rem;
+    color: #333;
+}
+
+/* Menú de navegación */
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
+    margin: 0 10px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+.page-separator {
+    width: 100%;
+    height: auto;
+}
+.page-separator img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+
+/* Sección de categorías */
+.categories {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 15px 0;
+    background-color: #F8C8DC;
+}
+
+.category {
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.category:hover {
+    transform: scale(1.05);
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    justify-items: center;
+}
+
+.category a {
+    text-decoration: none;
+    display: block;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category a:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.category h2 {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* Sección de productos */
+.product-section {
+    padding: 50px 0;
+    background-color: #fff;
+    margin-top: 20px;
+}
+
+.product-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #333;
+}
+
+/* Grid de productos */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+
+/* Tarjetas de productos */
+.product-card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.product-card h3 {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.product-card p {
+    margin: 10px 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+.product-card button {
+    background-color: #f8a9c5; /* Rosa claro */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.product-card button:hover {
+    background-color: #f8a9c5; /* Rosa claro */
+
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+.boton {
+    background-color: #f8bbd0; /* Rosa claro */
+    color: #333; /* Color del texto */
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    display: inline-block;
+    text-align: center;
+    width: 100%; 
+}
+
+.boton:hover {
+    background-color: #f9b1eb; 
+    transform: scale(1.05); 
+}
+
+.boton:active {
+    background-color: #f48fb1; /* Rosa más oscuro al hacer clic */
+    transform: scale(1); 
+}
+
+.boton:focus {
+    outline: none; 
+    box-shadow: 0 0 0 3px rgba(248, 187, 208, 0.6); 
+}
+
+
+/* Sección de pie de página */
+footer {
+    background-color: #0d020b;
+    color: #f8bbd0;
+    padding: 20px;
+    text-align: center;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Login y carrito */
+.login-section,
+.cart-section {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin: 10px auto;
+    text-align: center;
+}
+
+.login-section input,
+.cart-section input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.login-section button,
+.cart-section button {
+    background-color: #fbc5db;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 30px;
+    color: black;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.login-section button:hover,
+.cart-section button:hover {
+    background-color: #F5A3C7;
+}
+.form-group
+{
+    text-align: center;
+}
+
+/* Sobre Nosotros */
+.about-us {
+    padding: 50px 15px;
+    background-color: #fff;
+    color: #333;
+}
+
+.about-us .container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-us h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.about-us p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.about-us strong {
+    font-weight: bold;
+    color: #f8bbd0;
+}
+
+/* Sección de contacto */
+.contact {
+    padding: 50px 15px;
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.contact p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.social-links {
+    margin-bottom: 30px;
+}
+
+.social-link {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #f99fbf; /* Rosa claro */
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+
+.social-link:hover {
+    color: #f6ace2; /* Rosa oscuro */
+}
+
+.map iframe {
+    border: 0;
+    width: 100%;
+    max-width: 600px;
+    height: 450px;
+    margin-top: 20px;
+}
+
+/* Formulario de comentarios */
+.comment-form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: left;
+}
+
+.comment-form label {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.comment-form input,
+.comment-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.comment-form button {
+    background-color: #f8bbd0; /* Rosa claro */
+    border: none;
+    padding: 12px 20px;
+    border-radius: 30px;
+    color: black;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.comment-form button:hover {
+    background-color: #f9b1eb; /* Rosa oscuro */
+}
+
+/* Mensaje de confirmación */
+.confirmation-message {
+    color: #F48FB1;
+    font-size: 1.2rem;
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Iconos redes */
+.social-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #f9679a;
+    margin: 0 15px;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s;
+}
+
+.social-link:hover {
+    color: #f189d6; /* Rosa oscuro */
+}
+
+.social-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    fill: #fc699a;
+}
+
+.social-link:hover .social-icon {
+    filter: brightness(0.8);
+}
+
+/* Estilo iconos */
+.iconoDiv {
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+}
+.iconoDivLogo
+{
+    width: 75px;
+    height: 45px;
+    margin-right: 35px; 
+}
+
+/* Estilo para el ícono del carrito */
+.cart-icon {
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+}

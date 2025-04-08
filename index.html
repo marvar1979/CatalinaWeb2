@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marielle</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="Index.html">
+                    <img src="imagenes/logo.png" alt="Logo" class="iconoDivLogo mb-3 img-fluid" style="max-width: 35px;">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" href="Index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="SkincareProductos.html">Skincare</a></li>
+                        <li class="nav-item"><a class="nav-link" href="MakeUpProductos.html">Maquillaje</a></li>
+                        <li class="nav-item"><a class="nav-link" href="HairCareProducto.html">Haircare</a></li>
+                        <li class="nav-item"><a class="nav-link" href="ToolsProducto.html">Herramientas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="sobreNosotros.html">Sobre Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Login.html">Login</a></li>
+                        <li class="nav-item"><a class="nav-link" href="carrito.html">Carrito</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="page-separator">
+        <img src="imagenes/photo_5044252924250795067_y.jpg" alt="Separator"> </div>
+
+
+    <!-- Sección de categorías con enlaces a productos -->
+    <!-- Sección de Categorías -->
+    <section class="categories py-5">
+        <div class="container">
+            <div class="row text-center">
+                <!-- Categoría Skincare -->
+                <div class="col-md-3 mb-4">
+                    <div class="card border-light shadow-sm h-100">
+                        <div class="card-body">
+                            <a href="#skincare-products" class="d-block category-link">
+                                <img src="imagenes/icon/008-cleanser-1.svg" alt="Skincare" class="iconoDiv mb-3 img-fluid" style="max-width: 35px;">
+                                <h3 class="card-title text-uppercase font-weight-bold text-dark" style="font-size: 1rem;">Skincare</h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Categoría Maquillaje -->
+                <div class="col-md-3 mb-4">
+                    <div class="card border-light shadow-sm h-100">
+                        <div class="card-body">
+                            <a href="#makeup-products" class="d-block category-link">
+                                <img src="imagenes/icon/042-powder.svg" alt="Maquillaje" class="iconoDiv mb-3 img-fluid" style="max-width: 35px;">
+                                <h3 class="card-title text-uppercase font-weight-bold text-dark" style="font-size: 1rem;">Maquillaje</h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Categoría Haircare -->
+                <div class="col-md-3 mb-4">
+                    <div class="card border-light shadow-sm h-100">
+                        <div class="card-body">
+                            <a href="#haircare-products" class="d-block category-link">
+                                <img src="imagenes/icon/014-curling.svg" alt="Haircare" class="iconoDiv mb-3 img-fluid" style="max-width: 35px;">
+                                <h3 class="card-title text-uppercase font-weight-bold text-dark" style="font-size: 1rem;">Haircare</h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Categoría Herramientas -->
+                <div class="col-md-3 mb-4">
+                    <div class="card border-light shadow-sm h-100">
+                        <div class="card-body">
+                            <a href="#tools-products" class="d-block category-link">
+                                <img src="imagenes/icon/032-brushes.svg" alt="Herramientas" class="iconoDiv mb-3 img-fluid" style="max-width: 35px;">
+                                <h3 class="card-title text-uppercase font-weight-bold text-dark" style="font-size: 1rem;">Herramientas</h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+
+    <!-- Productos de cada categoría -->
+
+     <!-- skincare -->
+     <section id="skincare-products" class="product-section py-5">
+        <div class="container">
+            <h2 class="text-center text-uppercase font-weight-bold mb-4">Skincare</h2>
+            <div class="row" id="skincare-container">
+                <!-- Productos de skincare generados dinámicamente -->
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        const skincareProducts = [
+            { img: "imagenes/skinCare/beauty-of-jeons-tonico.jpg.webp", nombre: "Tónico", marca: "Beauty of Joseon", precio: 250 },
+            { img: "imagenes/skinCare/beauty-of-jeons-water-serum.jpg.webp", nombre: "Serum", marca: "Beauty of Joseon", precio: 150 },
+            { img: "imagenes/skinCare/beauty-of-jeons-crema.jpg.webp", nombre: "Protector Solar 50PF", marca: "Beauty of Joseon", precio: 190 },
+            { img: "imagenes/skinCare/Beauty-of-Joseon-REVIVE-EYE-SERUM-30ML-2.jpg.webp", nombre: "Serum de Ojos", marca: "Beauty of Joseon", precio: 140 }
+        ];
+    
+        const skincareContainer = document.getElementById("skincare-container");
+    
+        skincareProducts.forEach(producto => {
+            const productSkincare = `
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="card h-100 shadow-sm text-center">
+                        <img src="${producto.img}" class="card-img-top img-fluid p-3" alt="${producto.nombre}">
+                        <div class="card-body">
+                            <h5 class="card-title">${producto.nombre}</h5>
+                            <h6 class="text-muted">${producto.marca}</h6>
+                            <p class="font-weight-bold text-danger">${producto.precio} BS.</p>
+                            <input type="number" min="1" max="5" value="1" class="form-control mb-2">
+                            <button class="boton" class="btn btn-dark btn-block" onclick="addToCart(this)" data-nombre="${producto.nombre}" data-precio="${producto.precio}">
+                                Añadir al carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            skincareContainer.innerHTML += productSkincare;
+        });
+    
+        function addToCart(button) {
+            const nombre = button.getAttribute("data-nombre");
+            const precio = button.getAttribute("data-precio");
+            alert(`Añadido: ${nombre} - ${precio} BS.`);
+        }
+    </script>
+    
+<!-- Sección de Maquillaje -->
+<section id="makeup-products" class="product-section py-5">
+    <div class="container">
+        <h2 class="text-center text-uppercase font-weight-bold mb-4">Maquillaje</h2>
+        <div class="row" id="makeup-container">
+            <!-- Productos de maquillaje generados dinámicamente -->
+        </div>
+    </div>
+</section>
+
+<script>
+    const makeupProducts = [
+        { img: "imagenes/MakeUp/sheglam-corrector-ACORN.jpg.webp", nombre: "Corrector", marca: "Sheglam", precio: 125 },
+        { img: "imagenes/MakeUp/sheglam-base.jpg.webp", nombre: "Base Mate", marca: "Sheglam", precio: 155 },
+        { img: "imagenes/MakeUp/Maybelline-corrector.jpg.webp", nombre: "Corrector", marca: "Maybelline", precio: 145 },
+        { img: "imagenes/MakeUp/Maybelline-polvo232-golden-caramel.jpg.webp", nombre: "Polvo SUPER STAY", marca: "Maybelline", precio: 125 }
+    ];
+
+    const makeupContainer = document.getElementById("makeup-container");
+
+    makeupProducts.forEach(producto => {
+        const productHTML = `
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card h-100 shadow-sm text-center">
+                    <img src="${producto.img}" class="card-img-top img-fluid p-3" alt="${producto.nombre}">
+                    <div class="card-body">
+                        <h5 class="card-title">${producto.nombre}</h5>
+                        <h6 class="text-muted">${producto.marca}</h6>
+                        <p class="font-weight-bold text-danger">${producto.precio} BS.</p>
+                        <input type="number" min="1" max="5" value="1" class="form-control mb-2">
+                        <button  class="boton" class="btn btn-dark btn-block" onclick="addToCart(this)" data-nombre="${producto.nombre}" data-precio="${producto.precio}">
+                            Añadir al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+        `;
+        makeupContainer.innerHTML += productHTML;
+    });
+
+    function addToCart(button) {
+        const nombre = button.getAttribute("data-nombre");
+        const precio = button.getAttribute("data-precio");
+        alert(`Añadido: ${nombre} - ${precio} BS.`);
+    }
+</script>
+
+
+    <!-- Sección de Haircare -->
+<section id="haircare-products" class="product-section py-5">
+    <div class="container">
+        <h2 class="text-center text-uppercase font-weight-bold mb-4">Haircare</h2>
+        <div class="row" id="haircare-container">
+            <!-- Productos de haircare generados dinámicamente -->
+        </div>
+    </div>
+</section>
+
+<script>
+    const haircareProducts = [
+        { img: "imagenes/hairCare/garnier-Shampoo-aloevera.jpg.webp", nombre: "Hair food aloe vera shampoo", marca: "Garnier", precio: 55 },
+        { img: "imagenes/hairCare/garnier_crema-para-peinar-cacao.jpg.webp", nombre: "Hair food manteca de cacao crema para peinar", marca: "Garnier", precio: 55 },
+        { img: "imagenes/hairCare/Loreal-Oleo-Extraordinario-Nutricion-Universal-100-ml.jpg.webp", nombre: "Óleo Extraordinario", marca: "L'Oréal", precio: 95 },
+        { img: "imagenes/hairCare/villa-verde-tonico.jpg.webp", nombre: "Tónico de Romero 60ml", marca: "Villa Verde", precio: 25 }
+    ];
+
+    const haircareContainer = document.getElementById("haircare-container");
+
+    haircareProducts.forEach(producto => {
+        const productHTML = `
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card h-100 shadow-sm text-center">
+                    <img src="${producto.img}" class="card-img-top img-fluid p-3" alt="${producto.nombre}">
+                    <div class="card-body">
+                        <h5 class="card-title">${producto.nombre}</h5>
+                        <h6 class="text-muted">${producto.marca}</h6>
+                        <p class="font-weight-bold text-danger">${producto.precio} BS.</p>
+                        <input type="number" min="1" max="5" value="1" class="form-control mb-2">
+                        <button class="boton" class="btn btn-dark btn-block" onclick="addToCart(this)" data-nombre="${producto.nombre}" data-precio="${producto.precio}">
+                            Añadir al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+        `;
+        haircareContainer.innerHTML += productHTML;
+    });
+
+    function addToCart(button) {
+        const nombre = button.getAttribute("data-nombre");
+        const precio = button.getAttribute("data-precio");
+        alert(`Añadido: ${nombre} - ${precio} BS.`);
+    }
+</script>
+
+
+       <!-- Herramientas -->
+   <!-- Sección de Herramientas -->
+<section id="tools-products" class="product-section py-5">
+    <div class="container">
+        <h2 class="text-center text-uppercase font-weight-bold mb-4">Herramientas</h2>
+        <div class="row" id="tools-container">
+            <!-- Productos generados dinámicamente -->
+        </div>
+    </div>
+</section>
+
+<script>
+    const toolsProducts = [
+        { img: "imagenes/Tools/Set-de-11-brochas-de-maquillaje-BH-Cosmetics-Pink-a-Dot-Pink-a-Dot.jpg.webp", nombre: "Juego de brochas", marca: "BH Cosmetics", precio: 90 },
+        { img: "imagenes/Tools/Set-8-de-brochas-de-maquillaje-bh-cosmetics-iluminacion-juego-de-brochas-de-8-piezas.jpg.webp", nombre: "Illuminate de Ashley Tisdale", marca: "BH Cosmetics", precio: 120 },
+        { img: "imagenes/Tools/macrilan-pegamento-blanco.jpg.webp", nombre: "Pegamento para pestañas", marca: "Macrilan", precio: 30 },
+        { img: "imagenes/Tools/esponja-essence12-1.jpg.webp", nombre: "MAKEUP AND BAKING SPONGE", marca: "Essence", precio: 35 }
+    ];
+
+    const toolsContainer = document.getElementById("tools-container");
+
+    toolsProducts.forEach(producto => {
+        const productHTML = `
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card h-100 shadow-sm text-center">
+                    <img src="${producto.img}" class="card-img-top img-fluid p-3" alt="${producto.nombre}">
+                    <div class="card-body">
+                        <h5 class="card-title">${producto.nombre}</h5>
+                        <h6 class="text-muted">${producto.marca}</h6>
+                        <p class="font-weight-bold text-danger">${producto.precio} BS.</p>
+                        <input type="number" min="1" max="5" value="1" class="form-control mb-2">
+                        <button class="boton"  onclick="addToCart(this)" data-nombre="${producto.nombre}" data-precio="${producto.precio}">
+                            Añadir al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+        `;
+        toolsContainer.innerHTML += productHTML;
+    });
+
+    function addToCart(button) {
+        const nombre = button.getAttribute("data-nombre");
+        const precio = button.getAttribute("data-precio");
+        alert(`Añadido: ${nombre} - ${precio} BS.`);
+    }
+</script>
+
+    
+    <!-- Carrito de compras -->
+    <script src="carrito.js"></script>
+       
+   <!-- Sección de Contacto -->
+   <section class="contact">
+    <div class="container">
+        <h2>Contáctanos</h2>
+        <p>Estamos aquí para ayudarte y resolver cualquier duda.</p>
+        <p>¡Conéctate con nosotros a través de nuestras redes sociales o visita nuestra tienda!</p>
+        
+      
+        <div class="container text-center">
+            <div class="social-links">
+              <a href="https://www.instagram.com/av_mar_08/?hl=es" target="_blank" class="social-link">
+                <img src="imagenes/icon/instagram-svgrepo-com.svg" alt="Instagram" class="social-icon"> Instagram
+              </a>
+              <a href="https://www.facebook.com/profile.php?id=100009870162029" target="_blank" class="social-link">
+                <img src="imagenes/icon/facebook-svgrepo-com.svg" alt="Facebook" class="social-icon"> Facebook
+              </a>
+              <a href="https://www.linkedin.com/in/mariel-andrea-vargas-flores-18972b2a9" target="_blank" class="social-link">
+                <img src="imagenes/icon/linkedin-svgrepo-com.svg" alt="LinkedIn" class="social-icon"> LinkedIn
+              </a>
+            </div>
+          </div>
+          
+</section>
+
+ <!-- Footer -->
+ <footer class="bg-dark text-white text-center py-3 mt-4">
+    <p>&copy; 2025 Mariella. Todos los derechos reservados.</p>
+</footer>
+   
+
+</body>
+</html>

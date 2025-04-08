@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Mariella</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="Index.html">
+                    <img src="imagenes/logo.png" alt="Logo" class="iconoDivLogo mb-3 img-fluid" style="max-width: 35px;">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" href="Index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="SkincareProductos.html">Skincare</a></li>
+                        <li class="nav-item"><a class="nav-link" href="MakeUpProductos.html">Maquillaje</a></li>
+                        <li class="nav-item"><a class="nav-link" href="HairCareProducto.html">Haircare</a></li>
+                        <li class="nav-item"><a class="nav-link" href="ToolsProducto.html">Herramientas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="sobreNosotros.html">Sobre Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Login.html">Login</a></li>
+                        <li class="nav-item"><a class="nav-link" href="carrito.html">Carrito</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="page-separator">
+        <img src="imagenes/photo_5044252924250795067_y.jpg" alt="Separator"> 
+    </div>
+
+    <div class="container mt-4">
+        <section id="skincare-products">
+            <h2 class="text-center">Skincare</h2>
+            <div class="row" id="product-container">
+                <!-- Productos cargados dinámicamente aquí -->
+            </div>
+        </section>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const productos = [
+                {img: "imagenes/skinCare/beauty-of-jeons-tonico.jpg.webp", nombre: "Tonico", marca: "Beauty of Joseon", precio: 250},
+                {img: "imagenes/skinCare/beauty-of-jeons-water-serum.jpg.webp", nombre: "Serum", marca: "Beauty of Joseon", precio: 150},
+                {img: "imagenes/skinCare/beauty-of-jeons-crema.jpg.webp", nombre: "Protector Solar 50pf", marca: "Beauty of Joseon", precio: 190},
+                {img: "imagenes/skinCare/Beauty-of-Joseon-REVIVE-EYE-SERUM-30ML-2.jpg.webp", nombre: "Serum de Ojos", marca: "Beauty of Joseon", precio: 140},
+                {img: "imagenes/skinCare/BEAUTY-OF-JOSEON-CLEASING1.jpg.webp", nombre: "Cleansing Oil", marca: "Beauty of Joseon", precio: 270},
+                {img: "imagenes/skinCare/REFRESING-MASK-BEAUTY-OF-JOSEON.jpg.webp", nombre: "Mascarilla", marca: "Beauty of Joseon", precio: 210},
+                {img: "imagenes/skinCare/cerave-gel-limpiador-foaming-cerave3.jpg.webp", nombre: "Gel Limpiador", marca: "CeraVe", precio: 310},
+                {img: "imagenes/skinCare/CeraVe-Locion-hidratante.jpg.webp", nombre: "Locion Hidratante", marca: "CeraVe", precio: 290},
+                {img: "imagenes/skinCare/LRP_Jabonpurifiant34555.jpg.webp", nombre: "Gel limpiador", marca: "La Roche Posay", precio: 290},
+                {img: "imagenes/skinCare/LRP-effaclar-serum-la-roche.jpg.webp", nombre: "Serum", marca: "La Roche Posay", precio: 350},
+                {img: "imagenes/skinCare/LRP-cicaplast-baume-la-roche-posay.jpg.webp", nombre: "Cicaplast", marca: "La Roche Posay", precio: 230},
+                {img: "imagenes/skinCare/LRP-ANTHELIOS-UV-400.jpg.webp", nombre: "Protector Solar spf50+", marca: "La Roche Posay", precio: 310},
+                {img: "imagenes/skinCare/avene-agua-termal.jpg.webp", nombre: "Agua Thermal Spray", marca: "Avené", precio: 150},
+                {img: "imagenes/skinCare/eucerin-antipigment-dia.jpg.webp", nombre: "Crema Anti-Pigment", marca: "Eucerin", precio: 310},
+                {img: "imagenes/skinCare/eucerin-PHOTOAGING-CONTROL-TINTED.jpg.webp", nombre: "Protector Solar FPS 50+", marca: "Eucerin", precio: 225}
+            ];
+
+            const container = document.getElementById("product-container");
+            productos.forEach(producto => {
+                const productCard = document.createElement("div");
+                productCard.classList.add("col-md-4", "mb-4");
+                productCard.innerHTML = `
+                    <div class="card p-3 text-center">
+                        <img src="${producto.img}" class="card-img-top" alt="${producto.nombre}">
+                        <h5>${producto.nombre}</h3>
+                        <h6>${producto.marca}</h4>
+                        <p>${producto.precio} BS.</p>
+                        <input type="number" min="1" max="5" value="1" class="form-control mb-2">
+                        <button class="boton" onclick="addToCart(this)" data-nombre="${producto.nombre}" data-precio="${producto.precio}">Añadir al carrito</button>
+                    </div>
+                `;
+                container.appendChild(productCard);
+            });
+        });
+    </script>
+
+     
+    <!-- Carrito de compras -->
+    <script src="carrito.js"></script>
+
+    <footer class="bg-dark text-white text-center py-3 mt-4">
+        <p>&copy; 2025 Mariella. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
